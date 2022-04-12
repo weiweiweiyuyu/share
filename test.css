@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+/* CSS重置 */
+div,
+p,
+h2,
+ul,
+li {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    display: flex;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.outer {
+    margin: 0 auto;
+    width: 1800px;
+}
+
+.wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 256px);
+    grid-template-rows: repeat(4, 172px);
+    grid-column-gap: 40px;
+    grid-row-gap: 30px;
+}
+
+.wrap li {
+    background-color: rgb(243, 243, 243);
+    border-radius: 20px;
+    cursor: pointer;
+}
+.wrap li:hover .mask{
+    visibility: visible;
+    background-color: rgba(97, 97, 97, 0.7);
+}
+
+button{
+    border: 1px;
+}
+.mask{
+    visibility: hidden;
+    flex-direction: column;
+    display: flex;
+    height: 172px;
+    width: 256px;
+    border-radius: 20px;
+    /* opacity: 0.5; */
+    position: absolute;
+    background-color: grey;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.mask-content{
+    position: absolute;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.edit-button{
+    width: 119px;
+    height: 34px;
+    background-color: rgb(0, 143, 248);
+    border-radius: 10px;
+    color: white;
+}
+
+.img-style {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgb(191 190 190);
+}
+
+.text-style {
+    padding-left: 10px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: grey;
+}
+.icon-style{
+    padding-top: 20px;
+}
+
+/* 小于等于 300px 宽度的屏幕 */
+@media screen and (max-width:300px) {
+    .wrap{
+        width: 20%;
+    }
+
+}
+
+@media screen and (min-width: 300px) and (max-width:1000px) {
+    .wrap{
+        width: 50%;
+    }
+}
+
+/* 1000px ---1800px 需求 */
+@media only screen and (min-width: 1000px) and (max-width:1800px) {
+    .wrap{
+        width: 70%;
+    }
+}
